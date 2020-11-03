@@ -72,3 +72,7 @@ group :test do
   gem "factory_bot_rails"
   gem 'faker'
 end
+
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 5.13'
