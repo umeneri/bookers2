@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ /* flush */
+.notice {
+  color: green;
+  /* background-color: blue; */
+}
+.alert {
+  color: red;
+  /* background-color: red; */
+}
