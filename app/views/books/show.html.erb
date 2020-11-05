@@ -1,12 +1,22 @@
-<h1>Book detail</h1>
+<h2>Book detail</h2>
 
-<div>
-  <p>image: <%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
-  <p>user： <%= link_to @book.user.name, user_path(@book.user.name) %></p>
-  <p>title： <%= @book.title %></p>
-  <p>opinion： <%= @book.body %></p>
-  <% if @book.user == current_user %>
-    <p><%= link_to 'Edit', edit_book_path(@book) %></p>
-    <p><%= link_to 'Destroy', book_path(@book), method: :delete, data: {confirm: "削除しますか？"} %></p>
-  <% end %>
+<div class="row">
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>
+          <div>
+            <%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'30x30' %>
+            <p><%= link_to @book.user.name, user_path(@book.user.name) %></p>
+          </div>
+        </th>
+        <th><%= @book.title %></th>
+        <th><%= @book.body %></th>
+        <% if @book.user == current_user %>
+          <th><%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-sm btn-success' %></th>
+          <th><%= link_to 'Destroy', book_path(@book),  class: 'btn btn-sm btn-danger', method: :delete, data: {confirm: "削除しますか？"} %></th>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
 </div>

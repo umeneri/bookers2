@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!,except: [:top, :about]
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_book, except: [:top, :about]
 
   protected
 
@@ -11,5 +12,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     user_path(resource)
+  end
+
+  def set_book
+    @new_book = Book.new
   end
 end
