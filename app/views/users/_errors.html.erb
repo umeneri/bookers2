@@ -1,6 +1,8 @@
+<div class='error_explanation'>
 <% if user.errors.any? %>
   <p><%= user.errors.count %> error prohibited this obj from being saved:
   <% user.errors.full_messages.each do |message| %>
     <li><%= message %></li>
   <% end %>
 <% end %>
+</div>

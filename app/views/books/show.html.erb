@@ -6,8 +6,10 @@
       <tr>
         <th>
           <div>
-            <%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'30x30' %>
-            <p><%= link_to @book.user.name, user_path(@book.user.name) %></p>
+            <%= link_to user_path(@book.user.id) do %>
+              <%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'30x30' %>
+              <p><%= @book.user.name %></p>
+            <% end %>
           </div>
         </th>
         <th><%= @book.title %></th>
