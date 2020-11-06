@@ -65,7 +65,7 @@
         <%= render 'books/errors', book: @new_book %>
       <% end %>
       <div class="row">
-        <% if user_signed_in? && !(['edit', 'update'].include? controller.action_name) %>
+        <% if user_signed_in? && !(['edit', 'update'].include? controller.action_name) && !@user.nil? && !@new_book.nil? %>
           <%= render 'layouts/sidebar', user: @user, book: @new_book %>
         <% end %>
         <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6 col-md-8 offset-md-1">
